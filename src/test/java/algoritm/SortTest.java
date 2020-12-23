@@ -1,13 +1,14 @@
 package algoritm;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import algorithm.Sort;
 import algorithm.impl.BubbleSort;
 import algorithm.impl.InsertionSort;
+import algorithm.impl.QuickSort;
 import algorithm.impl.SelectSort;
 
 public class SortTest {
@@ -24,13 +25,6 @@ public class SortTest {
 		
 	}
 	
-//	@Test
-//	public void checkSetUp() {
-//		int [] tmpArr = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};
-//		for(int i=0; i<size;i++) {
-//			assertEquals(arr[i], tmpArr[i]);
-//		}
-//	}
 	@Test
 	public void selectSortTest() {
 		SelectSort selectSort = new SelectSort();
@@ -47,6 +41,13 @@ public class SortTest {
 	public void insertionSortTest() {
 		InsertionSort is = new InsertionSort();
 		is.sort(arr);
+		assertArrayEquals(expectedArr, arr);
+	}
+	
+	@Test
+	public void quickSortTest() {
+		Sort s = new QuickSort();
+		s.sort(arr);
 		assertArrayEquals(expectedArr, arr);
 	}
 }
