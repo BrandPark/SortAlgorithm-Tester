@@ -18,10 +18,17 @@ public class SortTest {
 	
 	@Before
 	public void setUp() {
-		int [] tmpArr = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};
-		int [] tmpExpectedArr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		arr = tmpArr;
-		expectedArr = tmpExpectedArr;
+		int [] case1 = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9}; 
+		int [] case2 = {1,10,5,8,7,10,6,4,3,1,2,9};
+		int [] case3 = {10, 7, 10, 8, 9};
+		int [] case4 = {1, 7, 1, 8, 9};
+		int [] expected1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; 
+		int [] expected2 = {1,1,2,3,4,5,6,7,8,9,10,10};
+		int [] expected3 = {7, 8, 9, 10, 10};
+		int [] expected4 = {1, 1, 7, 8, 9};
+		
+		arr = case2;
+		expectedArr = expected2;
 		
 	}
 	
