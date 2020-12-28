@@ -8,6 +8,7 @@ import org.junit.Test;
 import algorithm.Sort;
 import algorithm.impl.BubbleSort;
 import algorithm.impl.InsertionSort;
+import algorithm.impl.MergeSort;
 import algorithm.impl.QuickSort;
 import algorithm.impl.SelectSort;
 
@@ -29,7 +30,6 @@ public class SortTest {
 		
 		arr = case2;
 		expectedArr = expected2;
-		
 	}
 	
 	@Test
@@ -55,6 +55,12 @@ public class SortTest {
 	public void quickSortTest() {
 		Sort s = new QuickSort();
 		s.sort(arr);
+		assertArrayEquals(expectedArr, arr);
+	}
+	
+	@Test
+	public void mergeSortTest() {
+		new MergeSort().sort(arr);
 		assertArrayEquals(expectedArr, arr);
 	}
 }
